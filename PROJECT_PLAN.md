@@ -453,12 +453,19 @@ To ensure maximum impact during job placement interviews, the project provides:
 |   - Python Analytics Runner exporting 12 datasets to data/processed/analytics/.     |
 |   - Executive Python Visualization Suite generating 5 charts in reports/figures/.   |
 |   - Automated unit test suite: 12/12 tests passing in 0.14s.                         |
+| [COMPLETED] Milestone 3: Python Advanced Statistical Analysis & Hypothesis Testing |
+|   - Clearly defined units of analysis: Line Level (n=51,290) vs Order Level (n=25,728).|
+|   - Hypothesis 1: Welch's t-test (t=127.11, p<0.001) & Mann-Whitney U on discount margin.|
+|   - Hypothesis 2: Kruskal-Wallis (H=25,991, p<0.001, eta^2=0.683) across 5 discount tiers.|
+|   - Pairwise Games-Howell post-hoc tests confirming significant divergence across all pairs.|
+|   - Spearman Rank Correlation: line-level rho=-0.6691 and order-level rho=-0.6898 (p<0.001).|
+|   - Hypothesis 3: Contingency Chi-Square test (chi2=4.31, p=0.116, Cramér's V=0.013) on |
+|     order returns, proving discount depth does NOT significantly drive return rates. |
+|   - Focused statistical figures generated in reports/figures/statistical/.          |
+|   - Comprehensive analysis report generated in reports/statistical_analysis_report.md. |
+|   - Automated test suite: 18/18 tests passing in 5.05s.                              |
 +-------------------------------------------------------------------------------------+
-| [NEXT] Milestone 3: Python Statistical Analysis & Econometric Hypothesis Testing    |
-|   - Parametric & non-parametric tests (Welch's t-test, Mann-Whitney U, Chi-Square). |
-|   - Point elasticity of demand modeling across promotional brackets.                |
-+-------------------------------------------------------------------------------------+
-| [UPCOMING] Milestone 4: Power BI Enterprise Dashboard Application                   |
+| [NEXT] Milestone 4: Power BI Enterprise Dashboard Application                       |
 |   - 5-Page interactive executive report (.pbix) with What-If sensitivity cap.       |
 +-------------------------------------------------------------------------------------+
 | [UPCOMING] Milestone 5: Executive Business Synthesis & Interview Placement Guide    |
