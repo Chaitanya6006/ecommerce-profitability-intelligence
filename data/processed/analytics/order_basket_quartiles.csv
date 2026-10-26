@@ -1,0 +1,5 @@
+basket_quartile,quartile_label,total_orders,min_basket_usd,max_basket_usd,avg_basket_usd,total_sales_usd,total_profit_usd,quartile_profit_margin_pct,return_rate_pct
+1,Q1 - Micro Baskets,6432,0.56,62.16,30.06,193354.52,873.35,0.45,4.14
+2,Q2 - Low/Medium Baskets,6432,62.16,201.58,122.3,786636.11,32615.41,4.15,4.06
+3,Q3 - Medium/High Baskets,6432,201.58,597.81,361.94,2328007.02,151526.03,6.51,4.34
+4,Q4 - Enterprise Baskets,6432,597.86,23661.23,1451.26,9334504.96,1282442.56,13.74,4.24

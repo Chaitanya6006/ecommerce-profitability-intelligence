@@ -1,0 +1,10 @@
+category,discount_bracket,total_line_items,net_sales_usd,net_profit_usd,profit_margin_pct,avg_discount_applied_pct,return_rate_pct
+Furniture,01. No Discount (0%),4489,1924884.44,465496.92,24.18,0.0,4.21
+Furniture,02. Low/Moderate (0.01% - 20%),2517,1281289.28,139324.77,10.87,15.55,4.21
+Furniture,03. Aggressive/Deep (> 20%),2854,904278.18,-319738.96,-35.36,44.32,4.63
+Office Supplies,01. No Discount (0%),19216,2378075.4,608841.32,25.6,0.0,4.09
+Office Supplies,02. Low/Moderate (0.01% - 20%),5687,992422.8,147536.94,14.87,15.44,4.71
+Office Supplies,03. Aggressive/Deep (> 20%),6386,416994.31,-237782.43,-57.02,53.6,4.62
+Technology,01. No Discount (0%),5304,2689451.11,696357.03,25.89,0.0,4.36
+Technology,02. Low/Moderate (0.01% - 20%),2749,1446168.1,224582.4,15.53,12.88,4.8
+Technology,03. Aggressive/Deep (> 20%),2088,608938.29,-257160.7,-42.23,48.77,3.93

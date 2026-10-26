@@ -1,0 +1,6 @@
+discount_tier,distinct_orders,total_line_items,line_item_volume_share_pct,gross_sales_usd,total_discount_concession_usd,net_sales_usd,total_net_profit_usd,net_profit_margin_pct,avg_discount_pct,unprofitable_order_lines_pct,return_rate_pct
+01. No Discount (0%),15574,29009,56.56,6992410.95,0.0,6992410.95,1770695.27,25.32,0.0,0.0,4.15
+02. Low Discount (0.01% - 10%),3095,4679,9.12,2147808.46,185189.88,1962618.85,338189.26,17.23,8.94,19.26,4.32
+03. Moderate Discount (10.01% - 20%),4376,6274,12.23,2162896.8,405635.35,1757261.34,173254.84,9.86,19.22,23.32,4.85
+04. Aggressive Discount (20.01% - 40%),2846,4367,8.51,1681313.85,597415.96,1083897.81,-187271.06,-17.28,36.96,76.21,5.11
+05. Deep Discount (> 40%),4103,6961,13.57,2022060.17,1175747.57,846312.97,-627411.02,-74.13,58.78,98.43,4.11

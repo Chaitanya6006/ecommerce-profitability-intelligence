@@ -1,0 +1,8 @@
+rfm_segment,customer_count,customer_share_pct,avg_recency_days,avg_order_frequency,total_segment_sales_usd,avg_sales_per_customer_usd,total_segment_profit_usd,segment_profit_margin_pct,total_returned_items
+Champions,2188,12.56,118.8,2.55,4264621.92,1949.1,879171.32,20.62,555
+At Risk / Churn Warning,2690,15.45,903.6,1.36,2936163.03,1091.51,658582.02,22.43,334
+Loyal Customers,3191,18.32,284.6,1.69,2694629.56,844.45,585021.11,21.71,481
+Hibernating / Inactive,2405,13.81,956.6,1.0,245902.32,102.25,58991.43,23.99,133
+Potential Loyalists,1578,9.06,132.0,1.0,155069.79,98.27,36550.7,23.57,92
+Standard / Occasional Customers,936,5.37,427.6,1.0,94687.16,101.16,22342.25,23.6,48
+Margin Drainers (Negative Profit),4427,25.42,524.7,1.4,2251428.59,508.57,-773201.38,-34.34,577
