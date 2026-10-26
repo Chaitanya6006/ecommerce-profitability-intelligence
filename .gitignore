@@ -1,0 +1,46 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+env/
+ENV/
+.venv/
+
+# Environment variables & secrets
+.env
+.env.*
+*.pem
+*.key
+*.token
+
+# Local Database Files (generated dynamically by src/db_connector.py)
+*.db
+*.sqlite
+*.sqlite3
+data/ecommerce_profitability.db
+
+# Large raw datasets (generated on-demand by src/data_loader.py)
+data/raw/*
+!data/raw/.gitkeep
+
+# Large processed transactional tables (generated on-demand by src/db_connector.py)
+data/processed/*.csv
+!data/processed/.gitkeep
+!data/processed/analytics/
+
+# IDE & Editor folders
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Logs & temp files
+*.log
+*.tmp
