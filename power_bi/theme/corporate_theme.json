@@ -1,0 +1,45 @@
+{
+  "name": "E-Commerce Profitability Intelligence Theme",
+  "dataColors": [
+    "#1B365D",
+    "#2CA02C",
+    "#D62728",
+    "#FF7F0E",
+    "#3182BD",
+    "#6BAED6",
+    "#756BB1",
+    "#31A354",
+    "#E6550D",
+    "#636363"
+  ],
+  "background": "#FFFFFF",
+  "foreground": "#1B365D",
+  "tableAccent": "#1B365D",
+  "visualStyles": {
+    "*": {
+      "*": {
+        "outspace": [{ "color": { "solid": { "color": "#F8F9FA" } } }],
+        "background": [{ "transparency": 0, "color": { "solid": { "color": "#FFFFFF" } } }],
+        "border": [{ "show": true, "color": { "solid": { "color": "#E2E8F0" } }, "radius": 5 }],
+        "dropShadow": [{ "show": true, "color": { "solid": { "color": "#CBD5E0" } }, "angle": 45, "distance": 2, "blur": 4 }]
+      }
+    },
+    "page": {
+      "*": {
+        "background": [{ "color": { "solid": { "color": "#F8F9FA" } }, "transparency": 0 }]
+      }
+    },
+    "card": {
+      "*": {
+        "labels": [{ "fontSize": 20, "fontFamily": "Segoe UI", "color": { "solid": { "color": "#1B365D" } } }],
+        "categoryLabels": [{ "fontSize": 10, "fontFamily": "Segoe UI", "color": { "solid": { "color": "#4A5568" } } }]
+      }
+    }
+  },
+  "bad": "#D62728",
+  "neutral": "#FF7F0E",
+  "good": "#2CA02C",
+  "minimum": "#D62728",
+  "center": "#FF7F0E",
+  "maximum": "#2CA02C"
+}

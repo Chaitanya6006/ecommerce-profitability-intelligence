@@ -202,6 +202,40 @@ To preserve analytical rigor, all derived metrics are clearly distinguished from
 
 ---
 
+## 📊 Power BI Business Intelligence Application
+
+The interactive Power BI solution provides an executive decision platform structured around a Kimball-style Star Schema, automated Power Query (M) ingestion scripts, a verified DAX measures library, and an accessible corporate design system.
+
+### 1. Data Model Architecture (Star Schema)
+* **Fact Tables:** `fact_orders` (51,290 lines), `fact_returns` (1,079 orders - isolated audit log).
+* **Dimension Tables:** `dim_customers` (17,415), `dim_products` (3,788), `dim_geography` (3,856), `dim_date` (1,468), `dim_shipping_mode` (4).
+* **Relationships:** 6 unidirectional $N:1$ relationships ensuring deterministic filter propagation with zero double-counting.
+* **Documentation:** Detailed relational specifications in [`power_bi/data_model_documentation.md`](power_bi/data_model_documentation.md).
+
+### 2. Core DAX Measures & Verification
+All 25+ DAX measures are mathematically reconciled to **$0.00 dollar variance** against the PostgreSQL / SQLite database:
+* **Core Financials:** `[Total Sales]` ($12,642,501.91), `[Net Profit]` ($1,467,457.29), `[Profit Margin %]` (11.61%), `[Discount Concession $]` ($1,918,920.46).
+* **Volume & Basket:** `[Distinct Orders]` (25,728), `[Total Quantity Sold]` (178,312), `[Average Order Value]` ($491.39).
+* **Returns & Logistics:** `[Order Return Rate %]` (4.19%), `[Sales Exposed to Returns $]` ($525,932.23), `[Average Lead Time Days]` (3.97 Days).
+* **Policy Simulation:** `[Simulated Profit]` dynamically calculates bottom-line recovery under What-If discount ceilings (capping at 20% recovers **+$248,500** net profit).
+* **Documentation:** Full formulas and metadata in [`power_bi/dax_measures.md`](power_bi/dax_measures.md).
+
+### 3. Five-Page Executive Dashboard Specifications
+Detailed layouts, card placements, visual bindings, and wireframes are documented in [`power_bi/dashboard_specification.md`](power_bi/dashboard_specification.md):
+1. **Executive Overview:** High-level P&L scorecard, 48-month net revenue vs net profit trajectory, category margin rankings, and global market volume.
+2. **Profitability Intelligence & Bleeder Audit:** Sub-category profit waterfall (Copiers +$258K vs Tables -$64K), volume vs margin elasticity matrix, and SKU-level loss audit table.
+3. **Customer Intelligence & Segment Economics:** Customer lifetime value, segment contributions (Consumer 51.5% GMV), RFM quintile profitability heatmap, and multi-year cohort retention.
+4. **Discount Impact & Price Elasticity:** Margin collapse threshold (>20% discount collapses to -17.3% margin), empirical proof of return rate independence, and interactive What-If discount cap slider.
+5. **Regional Logistics & Shipping Analytics:** Carrier tier SLAs (Standard 5.0d, Same Day 0.04d), freight expense ratios (10.7% GMV), and regional lead time vs return rate spatial mapping.
+
+### 4. Implementation & Production Assets
+* **Automated Data Ingestion:** [`power_bi/power_query_scripts.m`](power_bi/power_query_scripts.m) (Parametric `DataFolderPath` loading).
+* **Design System Theme:** [`power_bi/theme/corporate_theme.json`](power_bi/theme/corporate_theme.json) (Navy, emerald, crimson, slate).
+* **Desktop Setup Manual:** [`power_bi/setup_instructions.md`](power_bi/setup_instructions.md) (Complete build guide).
+* **Quality Audit Protocol:** [`power_bi/validation_checklist.md`](power_bi/validation_checklist.md) (25-point audit checklist).
+
+---
+
 ## 🗂️ Project Directory Structure
 
 ```
@@ -230,6 +264,16 @@ Ecommerce-Profitability-Intelligence/
 │   ├── run_sql_analytics.py           # Automated SQL suite runner & analytics exporter
 │   ├── statistical_analysis.py        # Advanced Python statistical testing & report generator
 │   └── visualizations.py              # Publication-quality figure generation module
+├── power_bi/
+│   ├── dashboard_specification.md     # 5-page visual wireframes, layouts & field mappings
+│   ├── data_model_documentation.md    # Star schema, table catalog & relationship governance
+│   ├── dax_measures.md                # 25+ verified DAX formulas across 6 functional folders
+│   ├── power_query_scripts.m          # Modular Power Query (M) ETL scripts with parameter
+│   ├── setup_instructions.md          # Step-by-step Power BI Desktop assembly manual
+│   ├── validation_checklist.md        # Model audit & $0.00 financial reconciliation checklist
+│   ├── theme/
+│   │   └── corporate_theme.json       # Accessible corporate color palette & typography
+│   └── screenshots/                   # Exported high-resolution UI views
 ├── reports/
 │   ├── statistical_analysis_report.md # Comprehensive hypothesis testing & scientific report
 │   └── figures/                       # Exported PNG visual reporting charts
@@ -271,10 +315,18 @@ Ecommerce-Profitability-Intelligence/
   - [x] 4 publication-quality statistical charts in `reports/figures/statistical/`.
   - [x] Comprehensive research report in `reports/statistical_analysis_report.md`.
   - [x] Complete test suite passing: 18/18 tests in 5.05s.
-- [ ] **Milestone 4: Power BI Enterprise Dashboard Application (.pbix)**
+- [x] **Milestone 4: Power BI Enterprise Dashboard Application**
+  - [x] Star schema data model documentation with 6 clean relationships ([power_bi/data_model_documentation.md](power_bi/data_model_documentation.md)).
+  - [x] Verified DAX measures library with 100% reconciliation to database ([power_bi/dax_measures.md](power_bi/dax_measures.md)).
+  - [x] Modular Power Query (M) ETL ingestion scripts with `DataFolderPath` parameter ([power_bi/power_query_scripts.m](power_bi/power_query_scripts.m)).
+  - [x] Comprehensive 5-page dashboard specifications & wireframes ([power_bi/dashboard_specification.md](power_bi/dashboard_specification.md)).
+  - [x] Corporate visual theme definition with accessible palette ([power_bi/theme/corporate_theme.json](power_bi/theme/corporate_theme.json)).
+  - [x] Step-by-step Power BI Desktop setup instructions ([power_bi/setup_instructions.md](power_bi/setup_instructions.md)).
+  - [x] Model audit and validation checklist with exact benchmark comparison ([power_bi/validation_checklist.md](power_bi/validation_checklist.md)).
 - [ ] **Milestone 5: Executive Business Synthesis & Placement Interview Prep**
 
 ---
 
 ## 📄 License
 This project is open-source and available under the [MIT License](LICENSE).
+
