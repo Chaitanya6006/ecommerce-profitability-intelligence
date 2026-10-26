@@ -26,10 +26,10 @@ This analysis investigates a multi-year retail transaction dataset to answer fiv
 * **Geographic Coverage:** Global operations across 6 markets (Asia Pacific, Europe, USCA, LATAM, Africa, EMEA) and 147 countries.
 * **Financial Baseline (Source Reconciled):**
   * **Net Sales (Transactional Sales):** $12,642,501.91
-  * **Gross Sales (List-Price Catalog Value):** $14,561,422.37 (calculated as $\text{Sales} / (1 - \text{Discount})$)
-  * **Promotional Discount Concessions:** $1,918,920.46 (effective catalog discount rate of 13.18%)
-  * **Derived Cost of Goods Sold (COGS):** $9,817,040.85 (77.65% of net sales)
-  * **Outbound Shipping Freight:** $1,358,003.77 (10.74% of net sales)
+  * **Gross Sales (List-Price Catalog Value):** $15,006,490.23 (calculated as $\sum \text{Sales} / (1 - \text{Discount})$)
+  * **Promotional Discount Concessions:** $2,363,988.32 (effective catalog discount rate of 15.75%)
+  * **Derived Cost of Goods Sold (COGS):** $9,816,960.80 (77.65% of net sales)
+  * **Outbound Shipping Freight:** $1,358,085.70 (10.74% of net sales)
   * **Net Operating Profit:** $1,467,457.29
   * **Overall Net Profit Margin:** **11.61%**
 

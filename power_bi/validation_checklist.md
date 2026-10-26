@@ -44,13 +44,13 @@ With all page slicers cleared (unfiltered state), compare the Power BI DAX card 
 | DAX Measure | Power BI Card Display | Benchmark Ground Truth | Variance | Status |
 | :--- | :---: | :---: | :---: | :---: |
 | `[Total Sales]` | **\$12,642,501.91** | \$12,642,501.91 | **\$0.00** | [ ] PASS |
-| `[Gross Sales]` | **\$14,561,422.37** | \$14,561,422.37 | **\$0.00** | [ ] PASS |
-| `[Total COGS]` | **\$9,817,040.85** | \$9,817,040.85 | **\$0.00** | [ ] PASS |
-| `[Total Shipping Cost]` | **\$1,358,003.77** | \$1,358,003.77 | **\$0.00** | [ ] PASS |
+| `[Gross Sales]` | **\$15,006,490.23** | \$15,006,490.23 | **\$0.00** | [ ] PASS |
+| `[Total COGS]` | **\$9,816,960.80** | \$9,816,960.80 | **\$0.00** | [ ] PASS |
+| `[Total Shipping Cost]` | **\$1,358,085.70** | \$1,358,085.70 | **\$0.00** | [ ] PASS |
 | `[Net Profit]` | **\$1,467,457.29** | \$1,467,457.29 | **\$0.00** | [ ] PASS |
 | `[Profit Margin %]` | **11.61%** | 11.6073% | **0.00%** | [ ] PASS |
-| `[Discount Concession $]` | **\$1,918,920.46** | \$1,918,920.46 | **\$0.00** | [ ] PASS |
-| `[Effective Discount Rate %]` | **13.18%** | 13.1781% | **0.00%** | [ ] PASS |
+| `[Discount Concession $]` | **\$2,363,988.32** | \$2,363,988.32 | **\$0.00** | [ ] PASS |
+| `[Effective Discount Rate %]` | **15.75%** | 15.7531% | **0.00%** | [ ] PASS |
 | `[Total Line Items]` | **51,290** | 51,290 | **0** | [ ] PASS |
 | `[Distinct Orders]` | **25,728** | 25,728 | **0** | [ ] PASS |
 | `[Total Quantity Sold]` | **178,312** | 178,312 | **0** | [ ] PASS |
@@ -104,7 +104,8 @@ Audit specific analytical findings on each dashboard page to guarantee alignment
 - [ ] **Independence of Returns:**
   * Return rate across discount tiers remains tightly bounded between **3.98%** and **4.53%**, confirming that promotional pricing does not drive buyer remorse or excess returns ($\chi^2 = 4.31, p = 0.116$).
 - [ ] **What-If Parameter Simulation:**
-  * Setting `Discount Cap` slider to **20%** yields `[Simulated Profit]` of **~\$1,715,957**, representing a `[Profit Opportunity $]` recovery of **+\$248,500**.
+  * Setting `Discount Cap` slider to **20%** yields `[Simulated Profit (Static 20% Cap)]` of **\$2,499,943.84** (a static mathematical upper bound lift of **+\$1,032,486.55** assuming constant demand).
+  * In the conservative elasticity-adjusted model, `[Simulated Profit (Elasticity-Adjusted)]` yields **\$1,715,254.06**, representing a realistic `[Realistic Profit Lift]` recovery of **+\$247,796.77 (~+\$248.5K)** after price-sensitivity volume attrition.
 
 ### Page 5: Regional Logistics & Shipping Analytics
 - [ ] **Fulfillment Mode Distribution:**

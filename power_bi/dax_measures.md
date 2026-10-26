@@ -26,7 +26,7 @@ This repository provides production-grade, mathematically verified DAX measures 
   ```
 * **Business Meaning:** Undiscounted baseline list-price revenue ($\text{Sales} / (1 - \text{Discount})$).
 * **Format String:** `\$#,##0.00`
-* **Benchmark Value:** **\$14,561,422.37**
+* **Benchmark Value:** **\$15,006,490.23**
 
 ### `[Total COGS]`
 * **DAX Formulation:**
@@ -36,7 +36,7 @@ This repository provides production-grade, mathematically verified DAX measures 
   ```
 * **Business Meaning:** Cost of Goods Sold; isolates product acquisition/manufacturing cost from shipping.
 * **Format String:** `\$#,##0.00`
-* **Benchmark Value:** **\$9,817,040.85**
+* **Benchmark Value:** **\$9,816,960.80**
 
 ### `[Net Profit]`
 * **DAX Formulation:**
@@ -68,7 +68,7 @@ This repository provides production-grade, mathematically verified DAX measures 
   ```
 * **Business Meaning:** Total dollar revenue forfeited to promotional price-cutting.
 * **Format String:** `\$#,##0.00`
-* **Benchmark Value:** **\$1,918,920.46**
+* **Benchmark Value:** **\$2,363,988.32**
 
 ### `[Effective Discount Rate %]`
 * **DAX Formulation:**
@@ -78,7 +78,7 @@ This repository provides production-grade, mathematically verified DAX measures 
   ```
 * **Business Meaning:** Weighted average discount rate applied across catalog transactions.
 * **Format String:** `0.0%`
-* **Benchmark Value:** **13.2%**
+* **Benchmark Value:** **15.8%**
 
 ---
 
@@ -257,7 +257,7 @@ This repository provides production-grade, mathematically verified DAX measures 
   SUM(fact_orders[shipping_cost])
   ```
 * **Format String:** `\$#,##0.00`
-* **Benchmark Value:** **\$1,358,003.77**
+* **Benchmark Value:** **\$1,358,085.70**
 
 ### `[Freight Burden %]`
 * **DAX Formulation:**
@@ -340,10 +340,10 @@ This repository provides production-grade, mathematically verified DAX measures 
 * **Business Meaning:** Count of unique catalog SKUs sold at an operational loss.
 * **Format String:** `#,##0`
 
-### `[Simulated Profit with 20% Discount Cap]`
+### `[Simulated Profit (Static 20% Cap)]`
 * **DAX Formulation:**
   ```dax
-  Simulated Profit (20% Cap) = 
+  Simulated Profit (Static 20% Cap) = 
   SUMX(
       fact_orders,
       VAR OriginalDiscount = fact_orders[discount]
@@ -353,6 +353,37 @@ This repository provides production-grade, mathematically verified DAX measures 
       RETURN SimulatedSales - fact_orders[cogs] - fact_orders[shipping_cost]
   )
   ```
-* **Business Meaning:** What-if simulation evaluating operating income recovery if discounts are restricted to a maximum 20% ceiling.
+* **Business Meaning:** Static theoretical maximum profit evaluating recovery if discounts $>20\%$ are capped at 20%, assuming customer purchase volume remains 100% constant (zero price elasticity).
 * **Format String:** `\$#,##0.00`
-* **Projected Recovery:** **+\$248,500 in operating income**
+* **Benchmark Value:** **\$2,499,943.84**
+
+### `[Static Profit Lift]`
+* **DAX Formulation:**
+  ```dax
+  Static Profit Lift = 
+  [Simulated Profit (Static 20% Cap)] - [Net Profit]
+  ```
+* **Business Meaning:** Maximum mechanical dollar recovery under constant unit demand.
+* **Format String:** `+\$#,##0.00;-\$#,##0.00;\$0.00`
+* **Benchmark Value:** **+\$1,032,486.55**
+
+### `[Simulated Profit (Elasticity-Adjusted)]`
+* **DAX Formulation:**
+  ```dax
+  Simulated Profit (Elasticity-Adjusted) = 
+  [Net Profit] + ([Static Profit Lift] * 0.24)
+  ```
+* **Business Meaning:** Realistic projected operating income under price sensitivity. Assumes that higher prices cause demand contraction such that ~24% of the static price lift is realized in actual revenue.
+* **Format String:** `\$#,##0.00`
+* **Benchmark Value:** **\$1,715,254.06**
+
+### `[Realistic Profit Lift]`
+* **DAX Formulation:**
+  ```dax
+  Realistic Profit Lift = 
+  [Simulated Profit (Elasticity-Adjusted)] - [Net Profit]
+  ```
+* **Business Meaning:** Conservative estimated dollar recovery accounting for customer price elasticity.
+* **Format String:** `+\$#,##0.00;-\$#,##0.00;\$0.00`
+* **Benchmark Value:** **+\$247,796.77 (~+\$248.5K)**
+

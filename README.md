@@ -39,10 +39,10 @@ All financial numbers reconcile to **$0.00 difference** between raw files, SQLit
 | Metric | Historical Value (2012–2015) | Definition / Method |
 | :--- | :--- | :--- |
 | **Net Sales (Collected Revenue)** | **$12,642,501.91** | Sum of customer payments after discounts ($\sum \text{sales}$) |
-| **Gross Sales (List Price)** | **$14,561,422.37** | Pre-discount catalog value ($\sum \text{sales} / (1 - \text{discount})$) |
-| **Promotional Concessions** | **$1,918,920.46** | Dollar value surrendered to discounts ($\text{Gross Sales} - \text{Net Sales}$) |
-| **Cost of Goods Sold (COGS)** | **$9,817,040.85** | Derived product cost ($\text{Sales} - \text{Profit} - \text{Shipping Cost}$) |
-| **Outbound Shipping Freight** | **$1,358,003.77** | Operational delivery expenses ($\sum \text{shipping\_cost}$) |
+| **Gross Sales (List Price)** | **$15,006,490.23** | Pre-discount catalog value ($\sum \text{sales} / (1 - \text{discount})$) |
+| **Promotional Concessions** | **$2,363,988.32** | Dollar value surrendered to discounts ($\text{Gross Sales} - \text{Net Sales}$) |
+| **Cost of Goods Sold (COGS)** | **$9,816,960.80** | Derived product cost ($\text{Sales} - \text{Profit} - \text{Shipping Cost}$) |
+| **Outbound Shipping Freight** | **$1,358,085.70** | Operational delivery expenses ($\sum \text{shipping\_cost}$) |
 | **Net Operating Profit** | **$1,467,457.29** | Net bottom-line income ($\sum \text{profit}$) |
 | **Overall Net Profit Margin** | **11.61%** | Net Profit divided by Net Sales |
 | **Distinct Completed Orders** | **25,728** | Total unique `order_id` values |
@@ -208,8 +208,8 @@ Promotional discounting has a severe negative impact on line-item profit:
 * **Power Query Ingestion Scripts:** Parametric M code for importing all 7 tables documented in [`power_bi/power_query_scripts.m`](power_bi/power_query_scripts.m).
 * **Corporate Theme:** Clean corporate palette JSON (Navy, Emerald, Crimson, Slate) in [`power_bi/theme/corporate_theme.json`](power_bi/theme/corporate_theme.json).
 * **Dashboard Specifications:** Layouts, wireframes, and field bindings for 5 report pages in [`power_bi/dashboard_specification.md`](power_bi/dashboard_specification.md).
-* **Setup Manual & Validation Checklist:** Step-by-step assembly instructions in [`power_bi/setup_instructions.md`](power_bi/setup_instructions.md) and 25-point audit protocol in [`power_bi/validation_checklist.md`](power_bi/validation_checklist.md).
-* *Note on `.pbix` File:* A pre-compiled `.pbix` binary is omitted from Git to keep the repository lightweight and clean. Users can assemble the report in Power BI Desktop in under 10 minutes following the setup instructions.
+* **Setup Manuals & Validation Checklist:** Complete step-by-step visual tutorial in [`power_bi/BEGINNER_IMPLEMENTATION_GUIDE.md`](power_bi/BEGINNER_IMPLEMENTATION_GUIDE.md), technical setup instructions in [`power_bi/setup_instructions.md`](power_bi/setup_instructions.md), and 25-point audit protocol in [`power_bi/validation_checklist.md`](power_bi/validation_checklist.md).
+* *Note on `.pbix` File:* A pre-compiled `.pbix` binary is omitted from Git to keep the repository lightweight and clean. Users can assemble the report in Power BI Desktop in under 10 minutes following the beginner guide.
 
 ### 5-Page Dashboard Layouts
 1. **Executive Overview:** High-level P&L scorecard, 48-month net revenue vs net profit pacing, category margin rankings, and global market volume.
@@ -272,11 +272,12 @@ Ecommerce-Profitability-Intelligence/
 │   ├── statistical_analysis.py        # Python hypothesis testing & report generator
 │   └── visualizations.py              # Visualizations module for reports/figures/
 ├── power_bi/
+│   ├── BEGINNER_IMPLEMENTATION_GUIDE.md # Complete click-by-click visual tutorial for beginners
 │   ├── dashboard_specification.md     # 5-page visual wireframes, layouts & field mappings
 │   ├── data_model_documentation.md    # Star schema, table catalog & relationship governance
 │   ├── dax_measures.md                # 25+ verified DAX formulas across 6 functional folders
 │   ├── power_query_scripts.m          # Modular Power Query (M) ETL scripts with parameter
-│   ├── setup_instructions.md          # Step-by-step Power BI Desktop assembly manual
+│   ├── setup_instructions.md          # Technical Power BI Desktop assembly manual
 │   ├── validation_checklist.md        # Model audit & $0.00 financial reconciliation checklist
 │   ├── theme/
 │   │   └── corporate_theme.json       # Corporate color palette & typography

@@ -471,7 +471,7 @@ To ensure maximum impact during job placement interviews, the project provides:
 |   - Power Query (M) automated ingestion scripts with DataFolderPath parameter.       |
 |   - Complete 5-page UI/UX dashboard specifications and wireframes.                  |
 |   - Custom corporate visual theme JSON with WCAG-accessible palette.                 |
-|   - Step-by-step Power BI Desktop setup instructions and validation checklist.      |
+|   - Step-by-step Power BI beginner guide, technical setup manual & validation checklist.|
 |   - 100% financial and statistical reconciliation ($0.00 delta against warehouse).   |
 +-------------------------------------------------------------------------------------+
 | [COMPLETED] Milestone 5: Executive Business Synthesis & Placement Interview Prep    |
